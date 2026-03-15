@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Webpage Example</title>
+
+  <style>
+    /* ---------- Base Styling ---------- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    /* ---------- Navigation Menu ---------- */
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Hamburger Menu Button ---------- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* ---------- Main Content ---------- */
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077b6;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005f8a;
+    }
+
+    /* ---------- Responsive Design ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #0077b6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ---------- Smooth Animation ---------- */
+    nav ul {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <h1>My Responsive Website</h1>
+
+    <!-- Hamburger Button -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Welcome to My Page</h2>
+    <p>This page adapts beautifully across all screen sizes — from desktop to mobile.</p>
+    <img src="https://via.placeholder.com/250" alt="Sample Image" />
+
+    <form>
+      <input type="text" placeholder="Enter your name" />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <!-- Simple JavaScript for the Hamburger Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
