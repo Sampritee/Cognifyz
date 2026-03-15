@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Image Slideshow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slideshow {
+      width: 80%;
+      max-width: 700px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .slides {
+      width: 400%;
+      height: 100%;
+      display: flex;
+      animation: slide 12s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      25%  { transform: translateX(0%); }
+      30%  { transform: translateX(-100%); }
+      55%  { transform: translateX(-100%); }
+      60%  { transform: translateX(-200%); }
+      85%  { transform: translateX(-200%); }
+      90%  { transform: translateX(-300%); }
+      100% { transform: translateX(-300%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slideshow">
+    <div class="slides">
+      <img src="C:\Users\USER\Downloads\IMG 1.jpg" alt="">
+      <img src="C:\Users\USER\Downloads\IMG 2.jpg" alt="">
+      <img src="C:\Users\USER\Downloads\IMG 3.jpg" alt="">
+      <img src="C:\Users\USER\Downloads\IMG 4.jpg" alt="">
+    </div>
+  </div>
+
+</body>
+</html>
